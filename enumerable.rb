@@ -8,7 +8,10 @@ module MyEnumerable
 
   # any method
   def any?
-    @list.each { |item| return true if yield item }
+    @list.each do |element|
+      return true if yield element
+    end
+    false
   end
 
   # filter method
